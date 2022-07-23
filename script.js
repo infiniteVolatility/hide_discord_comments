@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            hide_discord_coomments
+// @name            hide discord comments
 // @description     Hides specific Discord messages at the click of a button
 // @version         1.0.0
 // @author          infiniteVolatility
