@@ -17,7 +17,7 @@ const createShush = (html) => {
   return temp.removeChild(temp.firstElementChild);
 };
 
-shush=createShush(`<svg class=shush aria-hidden="false" width="20" height="20" style="margin-right: 10px; margin-left: 50%; border: 2px solid white; box-shadow: 1px 1px 1px white; cursor: pointer;" role="button" aria-label="nutsacify" title="nutsacify">
+shush=createShush(`<svg class=shush aria-hidden="false" width="20" height="20" style="margin-right: 10px; margin-left: 50%; border: 2px solid white; box-shadow: 1px 1px 1px white; cursor: pointer;" role="button">
         <image href="https://pbs.twimg.com/profile_images/2624883867/015_bender-laugh_reasonably_small.gif" width="100%" height="100%"></image>
     </svg>`)
 
