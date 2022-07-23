@@ -9,6 +9,8 @@
 // @grant           none
 // ==/UserScript==
 
+function setUp(){
+
 let shush;
 
 const createShush = (html) => {
@@ -17,7 +19,7 @@ const createShush = (html) => {
   return temp.removeChild(temp.firstElementChild);
 };
 
-shush=createShush(`<svg class=shush aria-hidden="false" width="20" height="20" style="margin-right: 10px; margin-left: 50%; border: 2px solid white; box-shadow: 1px 1px 1px white; cursor: pointer;" role="button">
+shush=createShush(`<svg class=shush aria-hidden="false" width="20" height="20" style="margin-right: 10px; margin-left: 50%; border: 2px solid white; box-shadow: 1px 1px 1px white; cursor: pointer;" role="button" aria-label="shush" title="shush">
         <image href="https://pbs.twimg.com/profile_images/2624883867/015_bender-laugh_reasonably_small.gif" width="100%" height="100%"></image>
     </svg>`)
 
@@ -27,7 +29,7 @@ async function shushify(e){
 
 
 function mountShush() {
-  const messages = [...document.querySelectorAll('[id^="chat-messages"]')].slice(-10);
+  const messages = [...document.querySelectorAll('[id^="chat-messages"]')].slice(-20);
   for(let i = 0; i < messages.length; i++){
     if( messages[i].querySelector(".shush") === null){
     messages[i].appendChild(shush.cloneNode(true))
@@ -37,7 +39,7 @@ function mountShush() {
   for(let i = 0; i < shushes.length; i++){
     shushes[i].addEventListener('click', shushify, false);
     }
-  const repliedShushPreviews = [...document.querySelectorAll('[class^="repliedTextPreview"]')].slice(-10)
+  const repliedShushPreviews = [...document.querySelectorAll('[class^="repliedTextPreview"]')].slice(-20)
   for(let i = 0; i < repliedShushPreviews; i++){
     repliedShushPreviewsstyle.setProperty('width','100%','');
   }
@@ -56,3 +58,5 @@ function addObserverIfDesiredNodeAvailable() {
     mountShush();
 }
 addObserverIfDesiredNodeAvailable();
+}
+setUp()
